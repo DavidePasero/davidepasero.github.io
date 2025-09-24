@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Machine Learning Blog - Davide Pasero</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- MathJax for mathematical expressions -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1><a href="/">Davide Pasero</a></h1>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog.html" class="active">AI & ML Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>AI & Machine Learning Blog</h2>
+            <p class="blog-intro">Deep dives into artificial intelligence, machine learning algorithms, and the mathematical foundations that make it all possible.</p>
+
+            <article id="neural-networks" class="blog-post">
+                <h3>Understanding Neural Networks: From Perceptrons to Deep Learning</h3>
+                <small class="post-meta">Published: December 2024</small>
+                
+                <p>Neural networks are the backbone of modern artificial intelligence. Let's explore how these powerful models work, starting from the basic building blocks.</p>
+                
+                <h4>The Perceptron: A Foundation</h4>
+                <p>The simplest neural network is the perceptron, which can be described mathematically as:</p>
+                
+                $$y = f\left(\sum_{i=1}^{n} w_i x_i + b\right)$$
+                
+                <p>Where:</p>
+                <ul>
+                    <li>$x_i$ are the input features</li>
+                    <li>$w_i$ are the weights</li>
+                    <li>$b$ is the bias term</li>
+                    <li>$f$ is the activation function</li>
+                </ul>
+
+                <h4>Activation Functions</h4>
+                <p>Common activation functions include:</p>
+                
+                <p><strong>Sigmoid:</strong> $\sigma(x) = \frac{1}{1 + e^{-x}}$</p>
+                <p><strong>ReLU:</strong> $\text{ReLU}(x) = \max(0, x)$</p>
+                <p><strong>Tanh:</strong> $\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$</p>
+
+                <h4>Backpropagation Algorithm</h4>
+                <p>Training neural networks relies on the backpropagation algorithm, which uses the chain rule to compute gradients:</p>
+                
+                $$\frac{\partial L}{\partial w_{ij}} = \frac{\partial L}{\partial a_j} \cdot \frac{\partial a_j}{\partial z_j} \cdot \frac{\partial z_j}{\partial w_{ij}}$$
+                
+                <p>Where $L$ is the loss function, $a_j$ is the activation, and $z_j$ is the pre-activation.</p>
+
+                <h4>Deep Learning Extensions</h4>
+                <p>Modern deep learning extends these concepts with:</p>
+                <ul>
+                    <li><strong>Convolutional layers</strong> for spatial data processing</li>
+                    <li><strong>Recurrent layers</strong> for sequential data</li>
+                    <li><strong>Attention mechanisms</strong> for focusing on relevant parts of input</li>
+                    <li><strong>Transformer architectures</strong> that have revolutionized NLP</li>
+                </ul>
+            </article>
+
+            <article id="linear-algebra" class="blog-post">
+                <h3>Linear Algebra in Machine Learning</h3>
+                <small class="post-meta">Published: December 2024</small>
+                
+                <p>Linear algebra is the mathematical foundation underlying most machine learning algorithms. Understanding these concepts is crucial for anyone serious about AI.</p>
+                
+                <h4>Vectors and Vector Spaces</h4>
+                <p>In machine learning, data points are often represented as vectors in high-dimensional spaces. A vector $\mathbf{v}$ in $\mathbb{R}^n$ can be written as:</p>
+                
+                $$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix}$$
+
+                <h4>Matrix Operations</h4>
+                <p>Key matrix operations in ML include:</p>
+                
+                <p><strong>Matrix Multiplication:</strong> For matrices $A \in \mathbb{R}^{m \times n}$ and $B \in \mathbb{R}^{n \times p}$:</p>
+                
+                $$(AB)_{ij} = \sum_{k=1}^{n} A_{ik}B_{kj}$$
+
+                <h4>Eigenvalues and Eigenvectors</h4>
+                <p>For a square matrix $A$, an eigenvector $\mathbf{v}$ and eigenvalue $\lambda$ satisfy:</p>
+                
+                $$A\mathbf{v} = \lambda\mathbf{v}$$
+                
+                <p>This relationship is fundamental in:</p>
+                <ul>
+                    <li><strong>Principal Component Analysis (PCA)</strong> - dimensionality reduction</li>
+                    <li><strong>Spectral clustering</strong> - finding data clusters</li>
+                    <li><strong>Google's PageRank algorithm</strong> - ranking web pages</li>
+                </ul>
+
+                <h4>Singular Value Decomposition (SVD)</h4>
+                <p>Any matrix $A \in \mathbb{R}^{m \times n}$ can be decomposed as:</p>
+                
+                $$A = U\Sigma V^T$$
+                
+                <p>Where $U$ and $V$ are orthogonal matrices and $\Sigma$ is diagonal. SVD is used in:</p>
+                <ul>
+                    <li>Collaborative filtering in recommendation systems</li>
+                    <li>Image compression</li>
+                    <li>Natural language processing (LSA)</li>
+                </ul>
+
+                <h4>Optimization and Gradients</h4>
+                <p>Machine learning is fundamentally about optimization. The gradient of a function $f: \mathbb{R}^n \to \mathbb{R}$ is:</p>
+                
+                $$\nabla f(\mathbf{x}) = \begin{bmatrix} \frac{\partial f}{\partial x_1} \\ \frac{\partial f}{\partial x_2} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{bmatrix}$$
+                
+                <p>Gradient descent updates parameters as: $\mathbf{x}_{t+1} = \mathbf{x}_t - \alpha \nabla f(\mathbf{x}_t)$</p>
+            </article>
+
+            <article id="probability-theory" class="blog-post">
+                <h3>Probability Theory in Machine Learning</h3>
+                <small class="post-meta">Published: December 2024</small>
+                
+                <p>Probability theory provides the mathematical framework for dealing with uncertainty in machine learning.</p>
+                
+                <h4>Bayes' Theorem</h4>
+                <p>One of the most important results in probability theory:</p>
+                
+                $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$
+                
+                <p>This forms the foundation of:</p>
+                <ul>
+                    <li>Naive Bayes classifiers</li>
+                    <li>Bayesian inference</li>
+                    <li>Maximum a posteriori (MAP) estimation</li>
+                </ul>
+
+                <h4>Maximum Likelihood Estimation</h4>
+                <p>For a dataset $\mathbf{X} = \{x_1, x_2, ..., x_n\}$ and parameter $\theta$, MLE finds:</p>
+                
+                $$\hat{\theta}_{MLE} = \arg\max_\theta \prod_{i=1}^{n} p(x_i|\theta)$$
+                
+                <p>Or equivalently, maximizing the log-likelihood:</p>
+                
+                $$\hat{\theta}_{MLE} = \arg\max_\theta \sum_{i=1}^{n} \log p(x_i|\theta)$$
+
+                <h4>Information Theory</h4>
+                <p>Key concepts from information theory used in ML:</p>
+                
+                <p><strong>Entropy:</strong> $H(X) = -\sum_{x} p(x) \log p(x)$</p>
+                <p><strong>Cross-entropy:</strong> $H(p,q) = -\sum_{x} p(x) \log q(x)$</p>
+                <p><strong>KL Divergence:</strong> $D_{KL}(p||q) = \sum_{x} p(x) \log \frac{p(x)}{q(x)}$</p>
+
+                <p>These concepts are fundamental in loss functions and model evaluation.</p>
+            </article>
+
+            <div class="blog-footer">
+                <p><strong>Stay tuned for more posts on:</strong></p>
+                <ul>
+                    <li>Convolutional Neural Networks and Computer Vision</li>
+                    <li>Natural Language Processing and Transformers</li>
+                    <li>Reinforcement Learning and Game Theory</li>
+                    <li>Statistical Learning Theory</li>
+                    <li>Optimization Algorithms in Deep Learning</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Davide Pasero. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
